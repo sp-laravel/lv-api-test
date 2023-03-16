@@ -28,10 +28,5 @@ return [
     'key' => env('AWS_ACCESS_KEY_ID'),
     'secret' => env('AWS_SECRET_ACCESS_KEY'),
     'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-  ],
-  'api' => [
-    'client_id' => env('API_CLIENT_ID'),
-    'client_secret' => env('API_CLIENT_SECRET'),
   ]
-
 ];

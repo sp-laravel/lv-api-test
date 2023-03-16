@@ -30,7 +30,6 @@ class PostController extends Controller {
       'extract' => 'required',
       'body' => 'required',
       'category_id' => 'required|exists:categories,id',
-      //'user_id' => 'required|exists:users,id',
     ]);
 
     $user = auth()->user();
@@ -52,7 +51,6 @@ class PostController extends Controller {
       'extract' => 'required',
       'body' => 'required',
       'category_id' => 'required|exists:categories,id',
-      // 'user_id' => 'required|exists:users,id',
     ]);
 
     $user = auth()->user();

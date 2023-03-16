@@ -2,7 +2,6 @@ php artisan make:model Category -m
 php artisan make:model Post -m
 php artisan make:model Tag -m
 php artisan make:model Image -m
-php artisan make:model AccessToken -m
 
 php artisan make:migration create_post_tag_table
 
@@ -25,7 +24,6 @@ php artisan make:resource UserResource
 
 php artisan storage:link
 php artisan migrate:fresh --seed
-php artisan r:l
 
 composer require laravel/passport
 php artisan migrate
@@ -35,10 +33,13 @@ php artisan passport:keys  -> Ejecutar en produccion generar llaves
 php artisan vendor:publish --tag=passport-config
 php artisan passport:client --password
 
+php artisan r:l
 php artisan config:clear
 php artisan config:cache
 
-
+// API CLIENT
+php artisan make:model AccessToken -m
+php artisan make:controller PostController
 
 
 // Image Faker
@@ -46,10 +47,3 @@ Vendor/fakephp/faker/src/faker/Provider/Image.php
 public const BASE_URL = 'https://placehold.jp';
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); //nueva linea
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //nueva linea
-
-
-// Index
-public function index() {
-  $categories = Category::all();
-  return $categories;
-}
