@@ -15,6 +15,8 @@
   {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   <script src="{{ mix('js/app.js') }}"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body class="font-sans antialiased">
@@ -33,6 +35,7 @@
       {{ $slot }}
     </main>
   </div>
+  @stack('js')
 </body>
 
 </html>
